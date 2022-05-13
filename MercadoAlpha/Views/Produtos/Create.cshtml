@@ -4,48 +4,41 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 class="offset-4 col-md-4 " >Create</h1>
 
-<h4>Produtos</h4>
+
+
+<h4 class="offset-4 col-md-4">Produtos</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+    <div class="offset-4 col-md-4">
+        <form asp-action="Create" class="border border-dark m-4">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
+                <input type="text" name="Id" class="form-control mt-3" placeholder="Id" />
                 <span asp-validation-for="Id" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" />
-                <span asp-validation-for="Descricao" class="text-danger"></span>
+            <div class="form-group ">
+                <input asp-for="Descricao" class="form-control mt-3" placeholder="Descrição do produto" />
+            </div>
+            <div class="form-group"> 
+                <input asp-for="UnidadeDeMedida" class="form-control mt-3" placeholder="Unidade de medida"/>
             </div>
             <div class="form-group">
-                <label asp-for="UnidadeDeMedida" class="control-label"></label>
-                <input asp-for="UnidadeDeMedida" class="form-control" />
-                <span asp-validation-for="UnidadeDeMedida" class="text-danger"></span>
+                <input asp-for="DataValidade" class="form-control mt-3"  placeholder="Data de validade"/>
             </div>
             <div class="form-group">
-                <label asp-for="DataValidade" class="control-label"></label>
-                <input asp-for="DataValidade" class="form-control" />
-                <span asp-validation-for="DataValidade" class="text-danger"></span>
+                <input asp-for="QtdEstoque" class="form-control mt-3" placeholder="Quantidade de estoque" />
             </div>
             <div class="form-group">
-                <label asp-for="QtdEstoque" class="control-label"></label>
-                <input asp-for="QtdEstoque" class="form-control" />
-                <span asp-validation-for="QtdEstoque" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Ir para a lista</a>
 </div>
 
 @section Scripts {

@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+using MercadoAlpha.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace MercadoAlpha.Controllers
 {
@@ -20,21 +23,28 @@ namespace MercadoAlpha.Controllers
             return View( db.PRODUTOS.ToList() );
         }
 
-        // GET: ProdutosController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: ProdutosController/Create
         public ActionResult Create()
         {
             return View();
         }
+  
 
-        // POST: ProdutosController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        public ActionResult Create(Produtos collection)
+        {
+            try
+            {
+                db.PRODUTOS.Add(collection);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
         public ActionResult Create(IFormCollection collection)
         {
             try

@@ -10,24 +10,24 @@
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
-    <thead>
+    <thead class="thead-dark">
         <tr>
-            <th>
+            <th scope="col"  class="border border-white">
                 @Html.DisplayNameFor(model => model.Id)
             </th>
-            <th>
+            <th scope="col"  class="border border-white">
                 @Html.DisplayNameFor(model => model.Descricao)
             </th>
-            <th>
+            <th scope="col"  class="border border-white">
                 @Html.DisplayNameFor(model => model.UnidadeDeMedida)
             </th>
-            <th>
+            <th scope="col"  class="border border-white">
                 @Html.DisplayNameFor(model => model.DataValidade)
             </th>
-            <th>
+            <th scope="col"  class="border border-white">
                 @Html.DisplayNameFor(model => model.QtdEstoque)
             </th>
-            <th></th>
+            
         </tr>
     </thead>
     <tbody>
