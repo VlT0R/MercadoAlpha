@@ -7,13 +7,14 @@ namespace MercadoAlpha.Models
 {
     public class Clientes
     {
-        public int nome { get; set; }
-        public int datanascimento { get; set; }
+        public int Id { get; set; }
+        public string nome { get; set; }
+        public string datanascimento { get; set; }
         public int idade { get; set; }
-        public char sexo { get; set; }
+        public string sexo { get; set; }
         public int telefone { get; set; }
-        public char email { get; set; }
-        public char endereco { get; set; }
+        public string email { get; set; }
+        public string endereco { get; set; }
 
 
     }

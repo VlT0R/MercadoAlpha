@@ -7,6 +7,7 @@ namespace MercadoAlpha.Models
 {
     public class Funcionario
     {
+        public int Id { get; set; }
         public int nome { get; set; }
         public int cargo { get; set; }
         public int datanasc { get; set; }
