@@ -9,10 +9,15 @@ namespace MercadoAlpha.Controllers
 {
     public class ProdutosController : Controller
     {
+        private readonly Contexto db;
+        public ProdutosController(Contexto contexto)
+        {
+            db = contexto;
+        }
         // GET: ProdutosController
         public ActionResult Index()
         {
-            return View();
+            return View( db.PRODUTOS.ToList() );
         }
 
         // GET: ProdutosController/Details/5
