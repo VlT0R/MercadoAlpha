@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MercadoAlpha.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,15 @@ namespace MercadoAlpha.Controllers
 {
     public class ClientesController : Controller
     {
+        private readonly Contexto db;
+        public ClientesController(Contexto contexto)
+        {
+            db = contexto;
+        }
         // GET: ClientesController
         public ActionResult Index()
         {
-            return View();
+            return View(db.CLIENTES.ToList());
         }
 
         // GET: ClientesController/Details/5
@@ -30,31 +36,35 @@ namespace MercadoAlpha.Controllers
         // POST: ClientesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Clientes collection)
         {
             try
             {
+                db.CLIENTES.Add(collection);
+                db.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View("Index");
             }
         }
 
         // GET: ClientesController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(db.CLIENTES.Where(a=> a.Id == id).FirstOrDefault());
         }
 
         // POST: ClientesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Clientes dadosTela)
         {
             try
             {
+                db.CLIENTES.Update(dadosTela);
+                db.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -66,7 +76,9 @@ namespace MercadoAlpha.Controllers
         // GET: ClientesController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            db.CLIENTES.Remove(db.CLIENTES.Where(a => a.Id==id).FirstOrDefault());
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // POST: ClientesController/Delete/5
