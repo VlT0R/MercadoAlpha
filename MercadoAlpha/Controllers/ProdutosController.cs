@@ -23,6 +23,11 @@ namespace MercadoAlpha.Controllers
             return View( db.PRODUTOS.ToList() );
         }
 
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
         public ActionResult Create()
         {
             return View();
@@ -30,32 +35,22 @@ namespace MercadoAlpha.Controllers
   
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Produtos collection)
         {
             try
             {
                 db.PRODUTOS.Add(collection);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        [HttpPost]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View("Index");
             }
         }
+
+        
 
         // GET: ProdutosController/Edit/5
         public ActionResult Edit(int id)
@@ -66,10 +61,12 @@ namespace MercadoAlpha.Controllers
         // POST: ProdutosController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Produtos dadosTela)
         {
             try
             {
+                db.PRODUTOS.Update(dadosTela);
+                db.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -81,7 +78,9 @@ namespace MercadoAlpha.Controllers
         // GET: ProdutosController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            db.PRODUTOS.Remove(db.PRODUTOS.Where(a => a.Id == id).FirstOrDefault());
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // POST: ProdutosController/Delete/5
