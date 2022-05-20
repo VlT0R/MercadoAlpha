@@ -1,0 +1,25 @@
+﻿@if (TempData["erro"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["erro"]
+    </div>
+}
+
+<div class="card text-white bg-danger m-12 offset-4 col-4 card text-center" style="max-width: 18rem;">
+    <div class="card-header">Bem-Vindo</div>
+    <div class="card-body">
+
+        <form action="/Login/Entrar" method="post">
+            <input type="hidden" name="ReturnUrl" class="form-control" value="@TempData["Url"]" />
+            <input type="text" name="login" class="form-control" placeholder="Login" />
+            <br />
+            <input type="password" name="senha" placeholder="Senha" class="form-control" />
+            <div class="card-footer bg-transparent border-danger">
+                <button type="submit" class="btn btn-success ">Entrar</button>
+            </div>
+            
+
+        </form>
+
+    </div>
+</div>

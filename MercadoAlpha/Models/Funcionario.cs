@@ -8,13 +8,13 @@ namespace MercadoAlpha.Models
     public class Funcionario
     {
         public int Id { get; set; }
-        public int nome { get; set; }
-        public int cargo { get; set; }
-        public int datanasc { get; set; }
-        public char sexo { get; set; }
+        public string nome { get; set; }
+        public string cargo { get; set; }
+        public DateTime datanasc { get; set; }
+        public string sexo { get; set; }
         public char endereco { get; set; }
-        public int telefone { get; set; }
-        public char  email{ get; set; }
+        public string telefone { get; set; }
+        public string  email{ get; set; }
 
 
     }

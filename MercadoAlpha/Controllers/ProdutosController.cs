@@ -1,5 +1,6 @@
 ﻿
 using MercadoAlpha.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace MercadoAlpha.Controllers
 {
+    [Authorize(AuthenticationSchemes = "CookieAuthentication")]
     public class ProdutosController : Controller
     {
         private readonly Contexto db;
@@ -84,18 +86,6 @@ namespace MercadoAlpha.Controllers
         }
 
         // POST: ProdutosController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+       
     }
 }

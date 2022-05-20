@@ -1,4 +1,5 @@
 ﻿using MercadoAlpha.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace MercadoAlpha.Controllers
 {
+   
     public class FuncionariosController : Controller
     {
         private readonly Contexto db;
@@ -82,18 +84,7 @@ namespace MercadoAlpha.Controllers
         }
 
         
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+    
+       
     }
 }

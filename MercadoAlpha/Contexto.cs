@@ -11,6 +11,8 @@ namespace MercadoAlpha
     {
         public Contexto(DbContextOptions<Contexto> option) : base(option) { }
 
+        public DbSet<Usuarios> USUARIOS { get; set; }
+
         public DbSet<Clientes> CLIENTES { get; set; }
         public DbSet<Produtos> PRODUTOS { get; set; }
         public DbSet<Funcionario> FUNCIONARIOS { get; set; }

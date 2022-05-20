@@ -8,64 +8,46 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace MercadoAlpha.Controllers
+
 {
-    [Authorize(AuthenticationSchemes = "CookieAuthentication")]
-    public class ClientesController : Controller
+    
+   
+    public class UsuariosController : Controller
     {
         private readonly Contexto db;
-        public ClientesController(Contexto contexto)
+
+        public UsuariosController(Contexto contexto)
         {
             db = contexto;
         }
-        // GET: ClientesController
+
+
+        // GET: Usuarios
         public ActionResult Index()
         {
-            return View(db.CLIENTES.ToList());
+            return View(db.USUARIOS.ToList());
         }
 
-        // GET: ClientesController/Details/5
+        // GET: Usuarios/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: ClientesController/Create
+        // GET: Usuarios/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ClientesController/Create
+        // POST: Usuarios/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Clientes collection)
+        public ActionResult Create(Usuarios dadosTela)
         {
             try
             {
-                db.CLIENTES.Add(collection);
-                db.SaveChanges();
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View("Index");
-            }
-        }
-
-        // GET: ClientesController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View(db.CLIENTES.Where(a=> a.Id == id).FirstOrDefault());
-        }
-
-        // POST: ClientesController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, Clientes dadosTela)
-        {
-            try
-            {
-                db.CLIENTES.Update(dadosTela);
+                db.USUARIOS.Add(dadosTela);
                 db.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
@@ -75,14 +57,38 @@ namespace MercadoAlpha.Controllers
             }
         }
 
-        // GET: ClientesController/Delete/5
+        // GET: Usuarios/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View(db.USUARIOS.Where(a => a.Id == id).FirstOrDefault());
+        }
+
+        // POST: Usuarios/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, Usuarios  dadosTela)
+        {
+            try
+            {
+                db.USUARIOS.Update(dadosTela);
+                db.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Usuarios/Delete/5
         public ActionResult Delete(int id)
         {
-            db.CLIENTES.Remove(db.CLIENTES.Where(a => a.Id==id).FirstOrDefault());
+            db.USUARIOS.Remove(db.USUARIOS.Where(a => a.Id == id).FirstOrDefault());
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        // POST: ClientesController/Delete/5
+     
+     
     }
 }
