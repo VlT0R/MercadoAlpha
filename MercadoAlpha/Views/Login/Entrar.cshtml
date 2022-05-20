@@ -1,4 +1,11 @@
-﻿@if (TempData["erro"] != null)
+﻿<style>
+    body{
+        background-color:black;
+    }
+  
+</style>
+
+@if (TempData["erro"] != null)
 {
     <div class="alert alert-danger">
         @TempData["erro"]
@@ -23,3 +30,4 @@
 
     </div>
 </div>
+
