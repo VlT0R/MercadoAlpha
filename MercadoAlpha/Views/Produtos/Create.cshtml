@@ -4,38 +4,48 @@
     ViewData["Title"] = "Create";
 }
 
-<h1 class="offset-4 col-md-4 " >Create</h1>
+<style>
+    body {
+        background-color: black;
+    }
+</style>
 
 
 
-<h4 class="offset-4 col-md-4">Produtos</h4>
+
+<h1 class="col-md-4  offset-3 col-5 text-warning text-nowrap">Cadastro de produtos</h1>
+
 <hr />
 <div class="row">
-    <div class="offset-4 col-md-4">
-        <form asp-action="Create" class="border border-dark m-4">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
-            <div class="form-group ">
-                <input asp-for="Descricao" class="form-control mt-3" placeholder="Descrição do produto" />
-            </div>
-            <div class="form-group"> 
-                <input asp-for="UnidadeDeMedida" class="form-control mt-3" placeholder="Unidade de medida"/>
-            </div>
-            <div class="form-group">
-                <input asp-for="DataValidade" class="form-control mt-3"  placeholder="Data de validade"/>
-            </div>
-            <div class="form-group">
-                <input asp-for="QtdEstoque" class="form-control mt-3" placeholder="Quantidade de estoque" />
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-success" />
-            </div>
-        </form>
+    <div class="card text-white bg-danger m-12 offset-4 col-4 card text-center" style="max-width: 18rem;">
+        
+        <div class="card-body">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class=" bg-danger text-light m-20">
+                    <div class="form-group ">
+                        <input asp-for="Descricao" class="form-control mt-3 " placeholder="Descrição do produto" />
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="UnidadeDeMedida" class="form-control mt-3" placeholder="Unidade de medida" />
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="DataValidade" class="form-control mt-3" placeholder="Data de validade" />
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="QtdEstoque" class="form-control mt-3" placeholder="Quantidade de estoque" />
+                    </div>
+                    <div class=" card-footer">
+                        <input type="submit" value="Cadastrar" class="btn btn-success" />
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Ir para a lista</a>
+    <a asp-action="Index">Ir para a Consulta</a>
 </div>
 
 @section Scripts {
