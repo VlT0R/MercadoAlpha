@@ -14,13 +14,15 @@ namespace MercadoAlpha.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    nome = table.Column<string>(type: "text", nullable: true),
+                    nomesocial = table.Column<string>(type: "text", nullable: true),
                     datanascimento = table.Column<string>(type: "text", nullable: true),
                     idade = table.Column<int>(type: "int", nullable: false),
                     sexo = table.Column<string>(type: "text", nullable: true),
                     telefone = table.Column<int>(type: "int", nullable: false),
                     email = table.Column<string>(type: "text", nullable: true),
-                    endereco = table.Column<string>(type: "text", nullable: true)
+                    endereco = table.Column<string>(type: "text", nullable: true),
+                    cep = table.Column<int>(type: "int", nullable: false),
+                    cpf = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

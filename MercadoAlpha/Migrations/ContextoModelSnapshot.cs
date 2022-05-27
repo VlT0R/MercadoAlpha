@@ -23,6 +23,12 @@ namespace MercadoAlpha.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int>("cep")
+                        .HasColumnType("int");
+
+                    b.Property<int>("cpf")
+                        .HasColumnType("int");
+
                     b.Property<string>("datanascimento")
                         .HasColumnType("text");
 
@@ -35,7 +41,7 @@ namespace MercadoAlpha.Migrations
                     b.Property<int>("idade")
                         .HasColumnType("int");
 
-                    b.Property<string>("nome")
+                    b.Property<string>("nomesocial")
                         .HasColumnType("text");
 
                     b.Property<string>("sexo")

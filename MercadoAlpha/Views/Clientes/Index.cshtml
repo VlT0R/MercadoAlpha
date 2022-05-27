@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.nome)
+                @Html.DisplayNameFor(model => model.nomesocial)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.datanascimento)
@@ -33,6 +33,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.endereco)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cpf)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -40,7 +46,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.nome)
+                @Html.DisplayFor(modelItem => item.nomesocial)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.datanascimento)
@@ -60,6 +66,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.endereco)
             </td>
+            <th>
+                @Html.DisplayNameFor(model => model.cep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cpf)
+            </th>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MercadoAlpha.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20220527185653_Inicial")]
+    [Migration("20220527185830_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,12 @@ namespace MercadoAlpha.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int>("cep")
+                        .HasColumnType("int");
+
+                    b.Property<int>("cpf")
+                        .HasColumnType("int");
+
                     b.Property<string>("datanascimento")
                         .HasColumnType("text");
 
@@ -37,7 +43,7 @@ namespace MercadoAlpha.Migrations
                     b.Property<int>("idade")
                         .HasColumnType("int");
 
-                    b.Property<string>("nome")
+                    b.Property<string>("nomesocial")
                         .HasColumnType("text");
 
                     b.Property<string>("sexo")
