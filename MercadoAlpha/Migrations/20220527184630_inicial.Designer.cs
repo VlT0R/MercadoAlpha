@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MercadoAlpha.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20220513171559_Inicial")]
-    partial class Inicial
+    [Migration("20220527184630_inicial")]
+    partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -57,26 +57,26 @@ namespace MercadoAlpha.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("cargo")
-                        .HasColumnType("int");
+                    b.Property<string>("cargo")
+                        .HasColumnType("text");
 
-                    b.Property<int>("datanasc")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("datanasc")
+                        .HasColumnType("datetime");
 
-                    b.Property<char>("email")
-                        .HasColumnType("int");
+                    b.Property<string>("email")
+                        .HasColumnType("text");
 
                     b.Property<char>("endereco")
                         .HasColumnType("int");
 
-                    b.Property<int>("nome")
-                        .HasColumnType("int");
+                    b.Property<string>("nome")
+                        .HasColumnType("text");
 
-                    b.Property<char>("sexo")
-                        .HasColumnType("int");
+                    b.Property<string>("sexo")
+                        .HasColumnType("text");
 
-                    b.Property<int>("telefone")
-                        .HasColumnType("int");
+                    b.Property<string>("telefone")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -89,21 +89,47 @@ namespace MercadoAlpha.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Codigo")
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("DataValidade")
                         .HasColumnType("datetime");
 
-                    b.Property<string>("Descricao")
+                    b.Property<string>("Marca")
                         .HasColumnType("text");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("Preco")
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("QtdEstoque")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("UnidadeDeMedida")
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<string>("UnidadeMedida")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.ToTable("PRODUTOS");
+                });
+
+            modelBuilder.Entity("MercadoAlpha.Models.Usuarios", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Login")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Senha")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("USUARIOS");
                 });
 #pragma warning restore 612, 618
         }

@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace MercadoAlpha.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -33,13 +33,13 @@ namespace MercadoAlpha.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    nome = table.Column<int>(type: "int", nullable: false),
-                    cargo = table.Column<int>(type: "int", nullable: false),
-                    datanasc = table.Column<int>(type: "int", nullable: false),
-                    sexo = table.Column<int>(type: "int", nullable: false),
+                    nome = table.Column<string>(type: "text", nullable: true),
+                    cargo = table.Column<string>(type: "text", nullable: true),
+                    datanasc = table.Column<DateTime>(type: "datetime", nullable: false),
+                    sexo = table.Column<string>(type: "text", nullable: true),
                     endereco = table.Column<int>(type: "int", nullable: false),
-                    telefone = table.Column<int>(type: "int", nullable: false),
-                    email = table.Column<int>(type: "int", nullable: false)
+                    telefone = table.Column<string>(type: "text", nullable: true),
+                    email = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -52,14 +52,31 @@ namespace MercadoAlpha.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Descricao = table.Column<string>(type: "text", nullable: true),
-                    UnidadeDeMedida = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
+                    UnidadeMedida = table.Column<string>(type: "text", nullable: true),
+                    Marca = table.Column<string>(type: "text", nullable: true),
+                    Nome = table.Column<string>(type: "text", nullable: true),
+                    Codigo = table.Column<string>(type: "text", nullable: true),
                     DataValidade = table.Column<DateTime>(type: "datetime", nullable: false),
+                    Preco = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
                     QtdEstoque = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PRODUTOS", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "USUARIOS",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Login = table.Column<string>(type: "text", nullable: true),
+                    Senha = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_USUARIOS", x => x.Id);
                 });
         }
 
@@ -73,6 +90,9 @@ namespace MercadoAlpha.Migrations
 
             migrationBuilder.DropTable(
                 name: "PRODUTOS");
+
+            migrationBuilder.DropTable(
+                name: "USUARIOS");
         }
     }
 }

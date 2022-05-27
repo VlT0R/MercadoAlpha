@@ -87,17 +87,26 @@ namespace MercadoAlpha.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Codigo")
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("DataValidade")
                         .HasColumnType("datetime");
 
-                    b.Property<string>("Descricao")
+                    b.Property<string>("Marca")
                         .HasColumnType("text");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("Preco")
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("QtdEstoque")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("UnidadeDeMedida")
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<string>("UnidadeMedida")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
