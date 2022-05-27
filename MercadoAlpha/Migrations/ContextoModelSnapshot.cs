@@ -58,6 +58,12 @@ namespace MercadoAlpha.Migrations
                     b.Property<string>("cargo")
                         .HasColumnType("text");
 
+                    b.Property<int>("cep")
+                        .HasColumnType("int");
+
+                    b.Property<int>("cpf")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("datanasc")
                         .HasColumnType("datetime");
 
@@ -67,8 +73,11 @@ namespace MercadoAlpha.Migrations
                     b.Property<char>("endereco")
                         .HasColumnType("int");
 
-                    b.Property<string>("nome")
+                    b.Property<string>("nomesocial")
                         .HasColumnType("text");
+
+                    b.Property<int>("rg")
+                        .HasColumnType("int");
 
                     b.Property<string>("sexo")
                         .HasColumnType("text");
