@@ -3,6 +3,11 @@
 @{
     ViewData["Title"] = "Create";
 }
+<style>
+    body {
+        background-color: black;
+    }
+</style>
 
 <h1 class="col-md-4  offset-3 col-5 text-warning text-nowrap">Cadastrar Clientes</h1>
 
@@ -15,28 +20,52 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class=" bg-danger text-light m-20">
                     <div class="form-group ">
-                        <input asp-for="nomesocial" class="form-control mt-3 " placeholder="nomesocial" />
+                        <label>
+                            Nome social
+                            <input asp-for="nomesocial" class="form-control mt-3 " placeholder="Joao" />
+                        </label>
                     </div>
-                    <div class="form-group">
-                        <input asp-for="email" class="form-control mt-3" placeholder="email" />
+                    <div class="form-group ">
+                        <label>
+                            E-mail
+                            <input asp-for="email" class="form-control mt-3 " placeholder="joao@gmail.com" />
+                        </label>
                     </div>
-                    <div class="form-group">
-                        <input asp-for="endereco" class="form-control mt-3" placeholder="endereco" />
+                    <div class="form-group ">
+                        <label>
+                            Endereco
+                            <input asp-for="endereco" class="form-control mt-3 " placeholder="Estado-Cidade-Bairro-Rua-N°" />
+                        </label>
                     </div>
-                    <div class="form-group">
-                        <input asp-for="cpf" class="form-control mt-3" placeholder="cpf" />
+                    <div class="form-group ">
+                        <label>
+                            CPF
+                            <input asp-for="cpf" class="form-control mt-3 " placeholder="999.888.777-66" />
+                        </label>
                     </div>
-                    <div class="form-group">
-                        <input asp-for="sexo" class="form-control mt-3" placeholder="sexo" />
+                    <div class="form-group ">
+                        <label>
+                            Sexo
+                            <input asp-for="sexo" class="form-control mt-3 " placeholder="M/F/O" />
+                        </label>
                     </div>
-                    <div class="form-group">
-                        <input asp-for="telefone" class="form-control mt-3" placeholder="telefone" />
+                    <div class="form-group ">
+                        <label>
+                            Telefone
+                            <input asp-for="telefone" class="form-control mt-3 " placeholder="9999-0000" />
+                        </label>
                     </div>
-                    <div class="form-group">
-                        <input asp-for="cep" class="form-control mt-3" placeholder="cep" />
+                    <div class="form-group ">
+                        <label>
+                            CEP
+                            <input asp-for="cep" class="form-control mt-3 " placeholder="00000.000.000" />
+                        </label>
                     </div>
-                    <div class="form-group">
-                        <input asp-for="datanascimento" class="form-control mt-3" placeholder="datanascimeto" />
+                    <div class="form-group ">
+                        <label>
+                            Datanascimento
+                            <input asp-for="datanascimento" class="form-control mt-3 " placeholder="00/00/0000" />
+                        </label>
                     </div>
                     <div class=" card-footer">
                         <input type="submit" value="Cadastrar" class="btn btn-success" />
