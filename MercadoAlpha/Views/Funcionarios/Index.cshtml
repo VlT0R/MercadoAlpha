@@ -52,40 +52,41 @@
             <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.cep)
             </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
+            <tr class="table-secondary text-center">
+                <td class="border border-dark">
                     @Html.DisplayFor(modelItem => item.nomesocial)
                 </td>
-                <td>
+                <td class="border border-dark">
                     @Html.DisplayFor(modelItem => item.cargo)
                 </td>
-                <td>
+                <td class="border border-dark">
                     @Html.DisplayFor(modelItem => item.datanasc)
                 </td>
-                <td>
+                <td class="border border-dark">
                     @Html.DisplayFor(modelItem => item.sexo)
                 </td>
-                <td>
+                <td class="border border-dark">
                     @Html.DisplayFor(modelItem => item.endereco)
                 </td>
-                <td>
+                <td class="border border-dark">
                     @Html.DisplayFor(modelItem => item.telefone)
                 </td>
-                <td>
+                <td class="border border-dark">
                     @Html.DisplayFor(modelItem => item.email)
                 </td>
-                <td>
+                <td class="border border-dark">
                     @Html.DisplayFor(modelItem => item.rg)
                 </td>
-                <td>
+                <td class="border border-dark">
                     @Html.DisplayFor(modelItem => item.cpf)
                 </td>
-                <td>
+                <td class="border border-dark">
                     @Html.DisplayFor(modelItem => item.cep)
                 </td>
                 <td>

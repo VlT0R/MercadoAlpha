@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MercadoAlpha.Controllers
 {
-   
+    [Authorize(AuthenticationSchemes = "CookieAuthentication")]
     public class FuncionariosController : Controller
     {
         private readonly Contexto db;
@@ -48,14 +48,14 @@ namespace MercadoAlpha.Controllers
             }
             catch
             {
-                return View();
+                return View("Index");
             }
         }
 
         // GET: FuncionariosController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(db.FUNCIONARIOS.Where(a=>a.Id==id).FirstOrDefault());
         }
 
         // POST: FuncionariosController/Edit/5
@@ -83,8 +83,6 @@ namespace MercadoAlpha.Controllers
             return RedirectToAction("Index");
         }
 
-        
-    
        
     }
 }
