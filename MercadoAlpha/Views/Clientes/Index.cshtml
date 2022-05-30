@@ -4,39 +4,40 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<style>
+    body {
+        background-color: black;
+    }
+</style>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Cadastrar Cliente</a>
 </p>
 <table class="table">
-    <thead>
+    <thead class="bg-danger text-light">
         <tr>
-            <th>
+            <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.nomesocial)
             </th>
-            <th>
+            <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.datanascimento)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.idade)
-            </th>
-            <th>
+            <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.sexo)
             </th>
-            <th>
+            <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.telefone)
             </th>
-            <th>
+            <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.email)
             </th>
-            <th>
+            <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.endereco)
             </th>
-            <th>
+            <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.cep)
             </th>
-            <th>
+            <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.cpf)
             </th>
             <th></th>
@@ -44,33 +45,30 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
+            <tr class="table-secondary  text-center">
+            <td class="border border-dark">
                 @Html.DisplayFor(modelItem => item.nomesocial)
             </td>
-            <td>
+            <td class="border border-dark">
                 @Html.DisplayFor(modelItem => item.datanascimento)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.idade)
-            </td>
-            <td>
+            <td class="border border-dark">
                 @Html.DisplayFor(modelItem => item.sexo)
             </td>
-            <td>
+            <td class="border border-dark">
                 @Html.DisplayFor(modelItem => item.telefone)
             </td>
-            <td>
+            <td class="border border-dark">
                 @Html.DisplayFor(modelItem => item.email)
             </td>
-            <td>
+            <td class="border border-dark">
                 @Html.DisplayFor(modelItem => item.endereco)
             </td>
-            <th>
-                @Html.DisplayNameFor(model => model.cep)
+            <th class="border border-dark">
+                @Html.DisplayFor(modelItem => item.cep)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.cpf)
+            <th class="border border-dark">
+                @Html.DisplayFor(modelItem => item.cpf)
             </th>
             <td>
                 @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
