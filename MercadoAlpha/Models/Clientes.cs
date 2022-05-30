@@ -9,7 +9,7 @@ namespace MercadoAlpha.Models
     {
         public int Id { get; set; }
         public string nomesocial { get; set; }
-        public string datanascimento { get; set; }
+        public DateTime datanascimento { get; set; }
         public int idade { get; set; }
         public string sexo { get; set; }
         public int telefone { get; set; }
