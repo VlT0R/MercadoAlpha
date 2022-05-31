@@ -20,9 +20,17 @@ namespace MercadoAlpha.Controllers
             db = contexto;
         }
         // GET: ProdutosController
-        public ActionResult Index()
+        public ActionResult Index(string query)
         {
-            return View( db.PRODUTOS.ToList() );
+            if (string.IsNullOrEmpty(query))
+            {
+                return View(db.PRODUTOS.ToList());
+            }
+            else
+            {
+                return View(db.PRODUTOS.Where(a=>a.Nome.Contains(query) || a.Marca.Contains(query)));
+            }
+            
         }
 
         public ActionResult Details(int id)

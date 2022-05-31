@@ -17,7 +17,7 @@ namespace MercadoAlpha.Controllers
         {
             db = contexto;
         }
-        
+
         public ActionResult Index(string query)
         {
             if (string.IsNullOrEmpty(query))
@@ -26,9 +26,9 @@ namespace MercadoAlpha.Controllers
             }
             else
             {
-                return View(db.FUNCIONARIOS.Where(a => a.Login.Contains(query) || a.nomesocial.Contains(query)));
+                return View(db.FUNCIONARIOS.Where(a => a.nomesocial.Contains(query) || a.cargo.Contains(query)));
             }
-        
+
         }
 
         // GET: FuncionariosController/Details/5

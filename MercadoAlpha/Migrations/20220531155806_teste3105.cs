@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace MercadoAlpha.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class teste3105 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,7 @@ namespace MercadoAlpha.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     nomesocial = table.Column<string>(type: "text", nullable: true),
-                    datanascimento = table.Column<string>(type: "text", nullable: true),
+                    datanascimento = table.Column<DateTime>(type: "datetime", nullable: false),
                     idade = table.Column<int>(type: "int", nullable: false),
                     sexo = table.Column<string>(type: "text", nullable: true),
                     telefone = table.Column<int>(type: "int", nullable: false),

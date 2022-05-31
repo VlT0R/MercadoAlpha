@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MercadoAlpha.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20220527185830_Inicial")]
-    partial class Inicial
+    [Migration("20220531155806_teste3105")]
+    partial class teste3105
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,8 +31,8 @@ namespace MercadoAlpha.Migrations
                     b.Property<int>("cpf")
                         .HasColumnType("int");
 
-                    b.Property<string>("datanascimento")
-                        .HasColumnType("text");
+                    b.Property<DateTime>("datanascimento")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("email")
                         .HasColumnType("text");
