@@ -23,9 +23,17 @@ namespace MercadoAlpha.Controllers
 
 
         // GET: Usuarios
-        public ActionResult Index()
+        public ActionResult Index(string query)
         {
-            return View(db.USUARIOS.ToList());
+            if (string.IsNullOrEmpty(query))
+            {
+                return View(db.USUARIOS.ToList());
+            }
+            else
+            {
+                return View(db.USUARIOS.Where(a => a.Login.Contains(query)));
+            }
+
         }
 
         // GET: Usuarios/Details/5
