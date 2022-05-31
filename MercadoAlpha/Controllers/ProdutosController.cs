@@ -65,7 +65,7 @@ namespace MercadoAlpha.Controllers
         // GET: ProdutosController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(db.PRODUTOS.Where(a => a.Id == id).FirstOrDefault());
         }
 
         // POST: ProdutosController/Edit/5

@@ -3,22 +3,29 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+    body {
+        background-color: black;
+        
+    }
 
-<h1>Index</h1>
+</style>
+
+<h1 class="text-center text-warning">Cadastrar usuario</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar usuario</a>
 </p>
 <table class="table">
-    <thead>
+    <thead class="bg-danger text-light">
         <tr>
-            <th>
+            <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.Id)
             </th>
-            <th>
+            <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.Login)
-            </th>
-            <th>
+            </th scope="col" class="border border-white">
+            <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.Senha)
             </th>
             <th></th>
@@ -26,14 +33,14 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
+        <tr class="table-secondary  text-center">
+            <td class="border border-dark">
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Login)
-            </td>
-            <td>
+            </td class="border border-dark">
+            <td class="border border-dark">
                 @Html.DisplayFor(modelItem => item.Senha)
             </td>
             <td>
