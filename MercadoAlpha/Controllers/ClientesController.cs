@@ -18,9 +18,17 @@ namespace MercadoAlpha.Controllers
             db = contexto;
         }
         // GET: ClientesController
-        public ActionResult Index()
+        public ActionResult Index(string query)
         {
-            return View(db.CLIENTES.ToList());
+            if (string.IsNullOrEmpty(query))
+            {
+                return View(db.CLIENTES.ToList());
+            }
+            else
+            {
+                return View(db.CLIENTES.Where(a => a.nomesocial.Contains(query) || a.cep.Contains(query)));
+            }
+
         }
 
         // GET: ClientesController/Details/5

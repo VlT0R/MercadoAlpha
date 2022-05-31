@@ -12,11 +12,11 @@ namespace MercadoAlpha.Models
         public DateTime datanascimento { get; set; }
         public int idade { get; set; }
         public string sexo { get; set; }
-        public int telefone { get; set; }
+        public string telefone { get; set; }
         public string email { get; set; }
         public string endereco { get; set; }
-        public int cep { get; set; }
-        public int cpf { get; set; }
+        public string cep { get; set; }
+        public string cpf { get; set; }
 
 
     }
