@@ -18,9 +18,17 @@ namespace MercadoAlpha.Controllers
             db = contexto;
         }
         
-        public ActionResult Index()
+        public ActionResult Index(string query)
         {
-            return View(db.FUNCIONARIOS.ToList());
+            if (string.IsNullOrEmpty(query))
+            {
+                return View(db.FUNCIONARIOS.ToList());
+            }
+            else
+            {
+                return View(db.FUNCIONARIOS.Where(a => a.Login.Contains(query) || a.nomesocial.Contains(query)));
+            }
+        
         }
 
         // GET: FuncionariosController/Details/5

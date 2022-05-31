@@ -10,7 +10,26 @@
         background-color: black;
     }
 </style>
-
+<div class=" card">
+    <div class=" card-header">Pesquisar Funcionários</div>
+    <div class="card-body">
+        <form action="/Funcionarios/Index" method="get">
+            <div class="row">
+                <div class="col-4">
+                    <a href="/Funcionarios/Create" class="btn btn-success">
+                        Novo Funcionário
+                    </a>
+                </div>
+                <div class="col-4">
+                    <input type="text" name="query" class="form-control" placeholder="Digite sua busca" />
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary" type="submit">Pesquisar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 <h1 class="text-center text-warning">Consultar Funcionários</h1>
 
 <p>
