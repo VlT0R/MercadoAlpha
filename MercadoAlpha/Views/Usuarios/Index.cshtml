@@ -12,20 +12,21 @@
 </style>
 
 <div class=" card">
-    <div class=" card-header text-center  bg-secondary">Pesquisar usuarios</div>
+    <div class=" card-header text-center  bg-primary text-light">Pesquisar Usuarios</div>
     <div class="card-body ">
         <form action="/Usuarios/Index" method="get">
             <div class="row">
-                <div class="col-4">
+                
+                <div class="col-9">
+                    <input type="text" name="query" class="form-control" placeholder="Digite sua busca" />
+                </div>
+                <div >
+                    <button class="btn btn-primary" type="submit">Pesquisar</button>
+                </div>
+                <div class='ml-3'>
                     <a href="/Usuarios/Create" class="btn btn-success">
                         Novo Usuario
                     </a>
-                </div>
-                <div class="col-4">
-                    <input type="text" name="query" class="form-control" placeholder="Digite sua busca" />
-                </div>
-                <div>
-                    <button class="btn btn-primary" type="submit">Pesquisar</button>
                 </div>
             </div>
         </form>
@@ -65,9 +66,12 @@
                 @Html.DisplayFor(modelItem => item.Senha)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-               
+                 <button type="button" class="btn btn-warning">
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id })
+                </button>
+                <button type="button" class="btn btn-danger">
+                    @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
+                </button>
             </td>
         </tr>
 }

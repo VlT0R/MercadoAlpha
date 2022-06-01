@@ -3,30 +3,43 @@
 @{
     ViewData["Title"] = "Create";
 }
+<style>
+    body {
+        background-color: black;
+    }
+</style>
 
-<h1>Create</h1>
+<h1 class="col-md-4  offset-3 col-5 text-warning text-nowrap">Cadastrar Usuarios</h1>
 
-<h4>Usuarios</h4>
 <hr />
-<div class="row">
+<div class="row offset-4">
     <div class="col-md-4">
+        <div class="card">
+        
+        <div class="card-body bg-danger text-white text-center" style="max-width: 18rem;">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+              <div class="form-row ">
+                <div class="col-md-6 mb-3">
+                  <label for="validationDefault01">Usuario</label>
+                   <input asp-for="Login" class="form-control" placeholder="admin"/>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="validationDefault02">Senha</label>
+                  <input asp-for="Senha" class="form-control" placeholder="admin"/>
+                </div>
+              </div>
+  
+           
             <div class="form-group">
-                <label asp-for="Login" class="control-label"></label>
-                <input asp-for="Login" class="form-control" />
-                <span asp-validation-for="Login" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Senha" class="control-label"></label>
-                <input asp-for="Senha" class="form-control" />
-                <span asp-validation-for="Senha" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Cadastrar" class="btn btn-success" />
             </div>
         </form>
     </div>
+</div>
+</div>
 </div>
 
 <div>

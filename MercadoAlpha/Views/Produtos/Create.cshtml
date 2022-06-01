@@ -14,17 +14,20 @@
 
 <hr />
 <div class="row">
-    <div class="card text-white bg-danger m-12 offset-4 col-4 card text-center" style="max-width: 18rem;">
+    <div class="card text-white bg-danger offset-4 col-4 card text-center">
         
         <div class="card-body">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class=" bg-danger text-light m-20">
+
                     <div class="form-group ">
                         <label>
                             Unidade Medida
-                            <input asp-for="UnidadeMedida" class="form-control mt-3 " placeholder="Un/Litro/Kg..." />
-                        </label>
+                            <input asp-for="UnidadeMedida" class="form-control" placeholder="Un/Litro/Kg..." />
+                             </label>
+  
+                       
                     </div>
                     <div class="form-group">
                         <label>

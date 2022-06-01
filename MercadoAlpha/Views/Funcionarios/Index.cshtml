@@ -12,33 +12,30 @@
 
 </style>
 
-
-
 <div class=" card">
-    <div class=" card-header">Pesquisar Funcionários</div>
-    <div class="card-body">
+    <div class=" card-header text-center  bg-primary text-light">Pesquisar Funcionarios</div>
+    <div class="card-body ">
         <form action="/Funcionarios/Index" method="get">
             <div class="row">
-                <div class="col-4">
-                    <a href="/Funcionarios/Create" class="btn btn-success">
-                        Novo Funcionário
-                    </a>
-                </div>
-                <div class="col-4">
+                
+                <div class="col-9">
                     <input type="text" name="query" class="form-control" placeholder="Digite sua busca" />
                 </div>
-                <div class="col-4">
+                <div >
                     <button class="btn btn-primary" type="submit">Pesquisar</button>
+                </div>
+                <div class='ml-3'>
+                    <a href="/Funcionarios/Create" class="btn btn-success">
+                        Novo Funcionario
+                    </a>
                 </div>
             </div>
         </form>
     </div>
 </div>
+
 <h1 class="text-center text-warning">Consultar Funcionários</h1>
 
-<p>
-    <a asp-action="Create">Cadastrar Funcionários</a>
-</p>
 <table class="table">
     <thead class="bg-danger text-light">
         <tr>
@@ -83,6 +80,9 @@
         {
             <tr class="table-secondary text-center">
                 <td class="border border-dark">
+                @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td class="border border-dark">
                     @Html.DisplayFor(modelItem => item.nomesocial)
                 </td>
                 <td class="border border-dark">
@@ -113,8 +113,12 @@
                     @Html.DisplayFor(modelItem => item.cep)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                   <button type="button" class="btn btn-warning">
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id })
+                </button>
+                <button type="button" class="btn btn-danger">
                     @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
+                </button>
                 </td>
             </tr>
         }

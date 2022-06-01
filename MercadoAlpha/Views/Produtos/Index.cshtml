@@ -12,20 +12,21 @@
 
 </style>
 <div class=" card">
-    <div class=" card-header text-center  bg-secondary">Pesquisar Produtos</div>
+    <div class=" card-header text-center  bg-primary text-light">Pesquisar Produtos</div>
     <div class="card-body ">
         <form action="/Produtos/Index" method="get">
             <div class="row">
-                <div class="col-4">
-                    <a href="/Produtos/Create" class="btn btn-success">
-                        Novo Produto
-                    </a>
-                </div>
-                <div class="col-4">
+                
+                <div class="col-9">
                     <input type="text" name="query" class="form-control" placeholder="Digite sua busca" />
                 </div>
                 <div >
                     <button class="btn btn-primary" type="submit">Pesquisar</button>
+                </div>
+                <div class='ml-3'>
+                    <a href="/Produtos/Create" class="btn btn-success">
+                        Novo Produto
+                    </a>
                 </div>
             </div>
         </form>
@@ -33,9 +34,7 @@
 </div>
 <h1 class="text-center text-warning">Consultar Produtos</h1>
 
-<p>
-    <a asp-action="Create">Cadastrar produto</a>
-</p>
+
 <table class="table">
     <thead class="bg-danger text-light">
         <tr>
