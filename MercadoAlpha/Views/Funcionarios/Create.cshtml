@@ -4,8 +4,12 @@
     ViewData["Title"] = "Create";
 }
 <style>
-    body {
-        background-color: black;
+body{
+    background-color:black;
+     font-weight: bold;
+}
+.negrito{
+        font-weight: bold;
     }
 </style>
 
@@ -14,10 +18,10 @@
 <hr />
 
 
-<div class="row">
-    <div class="card text-white bg-danger m-12 offset-4 col-4 card text-center" style="max-width: 18rem;">
+<div class="row negrito">
+    <div class="card text-white bg-danger m-12 offset-4 col-4 card text-center negrito" style="max-width: 18rem;">
 
-        <div class="card-body">
+        <div class="card-body negrito">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class=" bg-danger text-light m-20">
@@ -82,7 +86,7 @@
                         </label>
                     </div>
                     <div class=" card-footer">
-                        <input type="submit" value="Cadastrar" class="btn btn-success" />
+                        <input type="submit" value="Cadastrar" class="btn btn-success negrito" />
                     </div>
                 </div>
             </form>

@@ -7,9 +7,15 @@
 <style>
     body {
         background-color: black;
+        font-weight: bold;
     }
+
+    .negrito{
+        font-weight: bold;
+    }
+
 </style>
-<div class=" card">
+<div class=" card negrito">
     <div class=" card-header text-center  bg-primary text-light">Pesquisar Clientes</div>
     <div class="card-body ">
         <form action="/Clientes/Index" method="get">
@@ -19,10 +25,10 @@
                     <input type="text" name="query" class="form-control" placeholder="Digite sua busca" />
                 </div>
                 <div >
-                    <button class="btn btn-primary" type="submit">Pesquisar</button>
+                    <button class="btn btn-primary negrito" type="submit">Pesquisar</button>
                 </div>
                 <div class='ml-3'>
-                    <a href="/Clientes/Create" class="btn btn-success">
+                    <a href="/Clientes/Create" class="btn btn-success negrito">
                         Novo Cliente
                     </a>
                 </div>
@@ -31,9 +37,9 @@
     </div>
 </div>
 
-<h1 class="text-center text-warning">Consultar Clientes</h1>
+<h1 class="text-center text-warning negrito">Consultar Clientes</h1>
 
-<table class="table">
+<table class="table negrito">
     <thead class="bg-danger text-light">
         <tr>
             <th scope="col" class="border border-white">
@@ -63,48 +69,52 @@
             <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.cpf)
             </th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-            <tr class="table-secondary  text-center">
-                <th scope="col" class="border border-white">
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <td class="border border-dark">
-                @Html.DisplayFor(modelItem => item.nomesocial)
-            </td>
-            <td class="border border-dark">
-                @Html.DisplayFor(modelItem => item.datanascimento)
-            </td>
-            <td class="border border-dark">
-                @Html.DisplayFor(modelItem => item.sexo)
-            </td>
-            <td class="border border-dark">
-                @Html.DisplayFor(modelItem => item.telefone)
-            </td>
-            <td class="border border-dark">
-                @Html.DisplayFor(modelItem => item.email)
-            </td>
-            <td class="border border-dark">
-                @Html.DisplayFor(modelItem => item.endereco)
-            </td>
-            <th class="border border-dark">
-                @Html.DisplayFor(modelItem => item.cep)
-            </th>
-            <th class="border border-dark">
-                @Html.DisplayFor(modelItem => item.cpf)
-            </th>
-            <td>
-                 <button type="button" class="btn btn-warning">
+        @foreach (var item in Model)
+        {
+            <tr class="table-secondary text-center negrito">
+                <td class="border border-dark">
+                @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td class="border border-dark">
+                    @Html.DisplayFor(modelItem => item.nomesocial)
+                </td>
+                <td class="border border-dark">
+                    @Html.DisplayFor(modelItem => item.datanascimento)
+                </td>
+                <td class="border border-dark">
+                    @Html.DisplayFor(modelItem => item.sexo)
+                </td>
+                <td class="border border-dark">
+                    @Html.DisplayFor(modelItem => item.telefone)
+                </td>
+                <td class="border border-dark">
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td class="border border-dark">
+                    @Html.DisplayFor(modelItem => item.endereco)
+                </td>
+                <td class="border border-dark">
+                    @Html.DisplayFor(modelItem => item.cep)
+                </td>
+                <td class="border border-dark">
+                    @Html.DisplayFor(modelItem => item.cpf)
+                </td>
+               
+                <td> 
+                   <button type="button" class="btn btn-warning negrito">
                     @Html.ActionLink("Editar", "Edit", new { id = item.Id })
                 </button>
-                <button type="button" class="btn btn-danger">
+                <button type="button" class="btn btn-danger negrito">
                     @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
                 </button>
-            </td>
-        </tr>
-}
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+

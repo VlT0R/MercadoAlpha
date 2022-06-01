@@ -7,14 +7,19 @@
 <style>
     body {
         background-color: black;
+         font-weight: bold;
     }
+    .negrito{
+        font-weight: bold;
+    }
+
 </style>
 
-<h1 class="col-md-4  offset-3 col-5 text-warning text-nowrap text-center">Editar produtos</h1>
+<h1 class="col-md-4  offset-3 col-5 text-warning text-nowrap text-center negrito">Editar produtos</h1>
 
 <hr />
 <div class="row">
-    <div class="card text-white bg-danger m-12 offset-4 col-4 card text-center" style="max-width: 18rem;">
+    <div class="card text-white bg-danger m-12 offset-4 col-4 card text-center negrito" style="max-width: 18rem;">
         
         <div class="card-body">
         <form asp-action="Edit">
@@ -69,7 +74,7 @@
                         </label>
                     </div>
                     <div class=" card-footer">
-                        <input type="submit" value="Cadastrar" class="btn btn-success" />
+                        <input type="submit" value="Cadastrar" class="btn btn-success negrito" />
                     </div>
                 </div>
         </form>

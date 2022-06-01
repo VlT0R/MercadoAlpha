@@ -8,24 +8,29 @@
 <style>
     body {
         background-color: black;
+        font-weight: bold;
+    }
+
+    .negrito{
+        font-weight: bold;
     }
 
 </style>
 
 <div class=" card">
-    <div class=" card-header text-center  bg-primary text-light">Pesquisar Funcionarios</div>
+    <div class=" card-header text-center  bg-primary text-light negrito">Pesquisar Produtos</div>
     <div class="card-body ">
         <form action="/Funcionarios/Index" method="get">
             <div class="row">
                 
-                <div class="col-9">
+                <div class="col-8">
                     <input type="text" name="query" class="form-control" placeholder="Digite sua busca" />
                 </div>
                 <div >
-                    <button class="btn btn-primary" type="submit">Pesquisar</button>
+                    <button class="btn btn-primary negrito" type="submit">Pesquisar</button>
                 </div>
                 <div class='ml-3'>
-                    <a href="/Funcionarios/Create" class="btn btn-success">
+                    <a href="/Funcionarios/Create" class="btn btn-success negrito">
                         Novo Funcionario
                     </a>
                 </div>
@@ -36,7 +41,7 @@
 
 <h1 class="text-center text-warning">Consultar Funcionários</h1>
 
-<table class="table">
+<table class="table negrito">
     <thead class="bg-danger text-light">
         <tr>
             <th scope="col" class="border border-white">
@@ -113,10 +118,10 @@
                     @Html.DisplayFor(modelItem => item.cep)
                 </td>
                 <td>
-                   <button type="button" class="btn btn-warning">
+                   <button type="button" class="btn btn-warning negrito">
                     @Html.ActionLink("Editar", "Edit", new { id = item.Id })
                 </button>
-                <button type="button" class="btn btn-danger">
+                <button type="button" class="btn btn-danger negrito">
                     @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
                 </button>
                 </td>

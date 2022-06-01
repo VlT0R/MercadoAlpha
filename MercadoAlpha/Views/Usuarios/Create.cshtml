@@ -6,23 +6,29 @@
 <style>
     body {
         background-color: black;
+        font-weight: bold;
     }
+
+    .negrito{
+        font-weight: bold;
+    }
+
 </style>
 
-<h1 class="col-md-4  offset-3 col-5 text-warning text-nowrap">Cadastrar Usuarios</h1>
+<h1 class="col-md-4  offset-3 col-5 text-warning text-nowrap negrito">Cadastrar Usuarios</h1>
 
 <hr />
-<div class="row offset-4">
-    <div class="col-md-4">
-        <div class="card">
+<div class="row offset-4 negrito">
+    <div class="col-md-4 negrito">
+        <div class="card negrito">
         
-        <div class="card-body bg-danger text-white text-center" style="max-width: 18rem;">
+        <div class="card-body bg-danger text-white text-center negrito" style="max-width: 18rem;">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 
-              <div class="form-row ">
-                <div class="col-md-6 mb-3">
+              <div class="form-row negrito ">
+                <div class="col-md-6 mb-3 negrito">
                   <label for="validationDefault01">Usuario</label>
                    <input asp-for="Login" class="form-control" placeholder="admin"/>
                 </div>
@@ -34,7 +40,7 @@
   
            
             <div class="form-group">
-                <input type="submit" value="Cadastrar" class="btn btn-success" />
+                <input type="submit" value="Cadastrar" class="btn btn-success negrito" />
             </div>
         </form>
     </div>

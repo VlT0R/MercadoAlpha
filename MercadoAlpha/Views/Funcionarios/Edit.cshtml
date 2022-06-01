@@ -4,71 +4,95 @@
     ViewData["Title"] = "Edit";
 }
 
+<style>
+body{
+    background-color:black;
+     font-weight: bold;
+}
+.negrito{
+        font-weight: bold;
+    }
+</style>
+
 <h1 class="col-md-4  offset-3 col-5 text-warning text-nowrap">Editar Funcionarios</h1>
 
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="card text-white bg-danger m-12 offset-4 col-4 card text-center negrito" style="max-width: 18rem;">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" readonly="readonly" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="nomesocial" class="control-label"></label>
-                <input asp-for="nomesocial" class="form-control" />
-                <span asp-validation-for="nomesocial" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cargo" class="control-label"></label>
-                <input asp-for="cargo" class="form-control" />
-                <span asp-validation-for="cargo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="datanasc" class="control-label"></label>
-                <input asp-for="datanasc" class="form-control" />
-                <span asp-validation-for="datanasc" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="sexo" class="control-label"></label>
-                <input asp-for="sexo" class="form-control" />
-                <span asp-validation-for="sexo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="endereco" class="control-label"></label>
-                <input asp-for="endereco" class="form-control" />
-                <span asp-validation-for="endereco" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="telefone" class="control-label"></label>
-                <input asp-for="telefone" class="form-control" />
-                <span asp-validation-for="telefone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="email" class="control-label"></label>
-                <input asp-for="email" class="form-control" />
-                <span asp-validation-for="email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="rg" class="control-label"></label>
-                <input asp-for="rg" class="form-control" />
-                <span asp-validation-for="rg" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cpf" class="control-label"></label>
-                <input asp-for="cpf" class="form-control" />
-                <span asp-validation-for="cpf" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cep" class="control-label"></label>
-                <input asp-for="cep" class="form-control" />
-                <span asp-validation-for="cep" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           <div class=" bg-danger text-light m-20">
+               <div class="form-group ">
+                        <label>
+                            Id
+                            <input asp-for="Id" class="form-control mt-3 " placeholder="Un/Litro/Kg..." readonly="readonly" />
+                        </label>
+                    </div>
+                    <div class="form-group ">
+                        <label>
+                            Nome Social
+                            <input asp-for="nomesocial" class="form-control mt-3 " placeholder="Ex : Murilo" />
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            Cargo
+                            <input asp-for="cargo" class="form-control mt-3" placeholder="Ex : Gerente " />
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            Data de Nascimento
+                            <input asp-for="datanasc" class="form-control mt-3" placeholder="00/00/0000" />
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            Sexo
+                            <input asp-for="sexo" class="form-control mt-3" placeholder="Mas/Fem" />
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            Endereço
+                            <input asp-for="endereco" class="form-control mt-3" placeholder="Estado/cidade/bairro/rua" />
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            Telefone
+                            <input asp-for="telefone" class="form-control mt-3" placeholder="Ex:995723750" />
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            E-mail
+                            <input asp-for="email" class="form-control mt-3" placeholder="murilo@gmail.com" />
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            RG
+                            <input asp-for="rg" class="form-control mt-3" placeholder="49503..." />
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            CPF
+                            <input asp-for="cpf" class="form-control mt-3" placeholder=" 46520942032" />
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            CEP
+                            <input asp-for="cep" class="form-control mt-3" placeholder=" 15997308" />
+                        </label>
+                    </div>
+                    <div class=" card-footer">
+                        <input type="submit" value="Cadastrar" class="btn btn-success negrito" />
+                    </div>
+                </div>
         </form>
     </div>
 </div>

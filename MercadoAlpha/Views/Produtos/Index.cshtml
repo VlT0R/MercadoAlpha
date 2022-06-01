@@ -7,12 +7,16 @@
 <style>
     body {
         background-color: black;
-        
+        font-weight: bold;
+    }
+
+    .negrito{
+        font-weight: bold;
     }
 
 </style>
 <div class=" card">
-    <div class=" card-header text-center  bg-primary text-light">Pesquisar Produtos</div>
+    <div class=" card-header text-center  bg-primary text-light negrito">Pesquisar Produtos</div>
     <div class="card-body ">
         <form action="/Produtos/Index" method="get">
             <div class="row">
@@ -21,10 +25,10 @@
                     <input type="text" name="query" class="form-control" placeholder="Digite sua busca" />
                 </div>
                 <div >
-                    <button class="btn btn-primary" type="submit">Pesquisar</button>
+                    <button class="btn btn-primary negrito" type="submit">Pesquisar</button>
                 </div>
                 <div class='ml-3'>
-                    <a href="/Produtos/Create" class="btn btn-success">
+                    <a href="/Produtos/Create" class="btn btn-success negrito">
                         Novo Produto
                     </a>
                 </div>
@@ -32,34 +36,34 @@
         </form>
     </div>
 </div>
-<h1 class="text-center text-warning">Consultar Produtos</h1>
+<h1 class="text-center text-warning negrito">Consultar Produtos</h1>
 
 
 <table class="table">
     <thead class="bg-danger text-light">
         <tr>
-            <th scope="col" class="border border-white">
+            <th scope="col" class="border border-white negrito">
                 @Html.DisplayNameFor(model => model.Id)
             </th>
-            <th scope="col" class="border border-white">
+            <th scope="col" class="border border-white negrito">
                 @Html.DisplayNameFor(model => model.UnidadeMedida)
             </th>
-            <th scope="col" class="border border-white">
+            <th scope="col" class="border border-white negrito">
                 @Html.DisplayNameFor(model => model.Marca)
             </th>
-            <th scope="col" class="border border-white">
+            <th scope="col" class="border border-white negrito">
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
-            <th scope="col" class="border border-white">
+            <th scope="col" class="border border-white negrito">
                 @Html.DisplayNameFor(model => model.Codigo)
             </th>
-            <th scope="col" class="border border-white">
+            <th scope="col" class="border border-white negrito">
                 @Html.DisplayNameFor(model => model.DataValidade)
             </th>
-            <th scope="col" class="border border-white">
+            <th scope="col" class="border border-white negrito">
                 @Html.DisplayNameFor(model => model.Preco)
             </th>
-            <th scope="col" class="border border-white">
+            <th scope="col" class="border border-white negrito">
                 @Html.DisplayNameFor(model => model.QtdEstoque)
             </th>
 
@@ -93,10 +97,10 @@
                 @Html.DisplayFor(modelItem => item.QtdEstoque)
             </td>
             <td class="border border-dark">
-                <button type="button" class="btn btn-warning">
+                <button type="button" class="btn btn-warning negrito">
                     @Html.ActionLink("Editar", "Edit", new { id = item.Id })
                 </button>
-                <button type="button" class="btn btn-danger">
+                <button type="button" class="btn btn-danger negrito">
                     @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
                 </button>
             </td>
