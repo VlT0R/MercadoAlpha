@@ -6,9 +6,12 @@
 <style>
     body {
         background-color: black;
-        
+        font-weight: bold;
     }
 
+    .negrito {
+        font-weight: bold;
+    }
 </style>
 
 <div class=" card">
@@ -16,11 +19,11 @@
     <div class="card-body ">
         <form action="/Usuarios/Index" method="get">
             <div class="row">
-                
+
                 <div class="col-9">
                     <input type="text" name="query" class="form-control" placeholder="Digite sua busca" />
                 </div>
-                <div >
+                <div>
                     <button class="btn btn-primary" type="submit">Pesquisar</button>
                 </div>
                 <div class='ml-3'>
@@ -35,9 +38,6 @@
 
 <h1 class="text-center text-warning">Cadastrar usuario</h1>
 
-<p>
-    <a asp-action="Create">Criar usuario</a>
-</p>
 <table class="table">
     <thead class="bg-danger text-light">
         <tr>
@@ -46,7 +46,7 @@
             </th>
             <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.Login)
-            </th scope="col" class="border border-white">
+            </th>
             <th scope="col" class="border border-white">
                 @Html.DisplayNameFor(model => model.Senha)
             </th>
@@ -54,26 +54,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr class="table-secondary  text-center">
-            <td class="border border-dark">
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Login)
-            </td class="border border-dark">
-            <td class="border border-dark">
-                @Html.DisplayFor(modelItem => item.Senha)
-            </td>
-            <td>
-                 <button type="button" class="btn btn-warning">
-                    @Html.ActionLink("Editar", "Edit", new { id = item.Id })
-                </button>
-                <button type="button" class="btn btn-danger">
-                    @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
-                </button>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr class="table-secondary  text-center">
+                <td class="border border-dark">
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Login)
+                </td>
+                <td class="border border-dark">
+                    @Html.DisplayFor(modelItem => item.Senha)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-warning">
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Id })
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                        @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
+                    </button>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
