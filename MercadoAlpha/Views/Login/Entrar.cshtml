@@ -1,8 +1,12 @@
 ﻿<style>
-    body{
-        background-color:black;
+    body {
+        background-color: black;
+        font-weight: bold;
     }
-  
+
+    .negrito {
+        font-weight: bold;
+    }
 </style>
 
 @if (TempData["erro"] != null)
@@ -11,6 +15,14 @@
         @TempData["erro"]
     </div>
 }
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
 <div class="card text-white bg-danger m-12 offset-4 col-4 card text-center" style="max-width: 18rem;">
     <div class="card-header">Bem-Vindo</div>
@@ -24,7 +36,7 @@
             <div class="card-footer bg-transparent border-danger">
                 <button type="submit" class="btn btn-success ">Entrar</button>
             </div>
-            
+
 
         </form>
 
