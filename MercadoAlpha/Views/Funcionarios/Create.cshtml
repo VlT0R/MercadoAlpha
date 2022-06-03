@@ -19,77 +19,87 @@ body{
 
 
 <div class="row negrito">
-    <div class="card text-white bg-danger m-12 offset-4 col-4 card text-center negrito" style="max-width: 18rem;">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="card text-white bg-danger text-center negrito">
 
-        <div class="card-body negrito">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class=" bg-danger text-light m-20">
-                    <div class="form-group ">
-                        <label>
-                            Nome Social
-                            <input asp-for="nomesocial" class="form-control mt-3 " placeholder="murilo olivera..." />
-                        </label>
+            <div class="card-body">
+                <form asp-action="Create">
+
+                    <div class=" bg-danger text-light">
+
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <label> Nome </label>
+                                <input asp-for="nomesocial" class="form-control" placeholder="Ex: João" />
+                            </div>
+                            <div class="col-6">
+                                <label>Cargo</label>
+                                <input asp-for="cargo" class="form-control" placeholder="Ex : Gerente " />
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <label>
+                                    Data Nascimento
+                                </label>
+                                <input asp-for="datanasc" class="form-control" placeholder="00/00/0000" />
+                            </div>
+                            <div class="col-6">
+                                <label>
+                                    Sexo
+                                </label>
+                                <input asp-for="sexo" class="form-control" placeholder="M/F" />
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <label>Endereço</label>
+                                <input asp-for="endereco" class="form-control " placeholder="Bairro/Rua/N°" />
+                            </div>
+                            <div class="col-6">
+                                <label>
+                                    Telefone
+                                    <input asp-for="telefone" class="form-control" placeholder="(16)-996741896" />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <label>E-mail</label>
+                                <input asp-for="email" class="form-control " placeholder="joao@gmail.com" />
+                            </div>
+                            <div class="col-6">
+                                <label>
+                                    RG
+                                    <input asp-for="rg" class="form-control" placeholder="49503..." />
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <label>CPF</label>
+                                <input asp-for="cpf" class="form-control " placeholder="46520942032" />
+                            </div>
+                            <div class="col-6">
+                                <label>
+                                    CEP
+                                    <input asp-for="cep" class="form-control" placeholder="15997308" />
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class=" card-footer">
+                            <input type="submit" value="Cadastrar" class="btn btn-success negrito" />
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>
-                            Cargo
-                            <input asp-for="cargo" class="form-control mt-3" placeholder=" Repositor" />
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            Data de Nascimento
-                            <input asp-for="datanasc" class="form-control mt-3" placeholder=" 03/03/2002" />
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            Sexo
-                            <input asp-for="sexo" class="form-control mt-3" placeholder=" Masculino ou Feminino" />
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            Endereço
-                            <input asp-for="endereco" class="form-control mt-3" placeholder=" rua joao..." />
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            Telefone
-                            <input asp-for="telefone" class="form-control mt-3" placeholder=" 1699604..." />
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            E-mail
-                            <input asp-for="email" class="form-control mt-3" placeholder=" joaodemo@gmail.com" />
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            RG
-                            <input asp-for="rg" class="form-control mt-3" placeholder="49503..." />
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            CPF
-                            <input asp-for="cpf" class="form-control mt-3" placeholder=" 46520942032" />
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            CEP
-                            <input asp-for="cep" class="form-control mt-3" placeholder=" 15997308" />
-                        </label>
-                    </div>
-                    <div class=" card-footer">
-                        <input type="submit" value="Cadastrar" class="btn btn-success negrito" />
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </div>
