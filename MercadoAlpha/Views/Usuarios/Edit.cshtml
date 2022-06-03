@@ -18,35 +18,34 @@
 
 <h1 class="col-md-4  offset-3 col-5 text-warning text-nowrap text-center negrito">Editar usuario</h1>
 <hr />
-<div class="row">
-    <div class="card text-white bg-danger m-12 offset-4 col-4 card text-center negrito" style="max-width: 18rem;">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-             <div class=" bg-danger text-light m-20">
-               <div class="form-group ">
-                        <label>
-                            Id
-                            <input asp-for="Id" class="form-control mt-3 " readonly="readonly" />
-                        </label>
+<div class="row negrito">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="card text-white bg-danger text-center negrito">
+
+            <div class="card-body">
+                <form asp-action="Edit">
+
+                    <div class=" bg-danger text-light">
+
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <label>Login</label>
+                                <input asp-for="Login" class="form-control" placeholder="Ex: admin" />
+                            </div>
+                            <div class="col-6">
+                                <label>Senha</label>
+                                <input asp-for="Senha" class="form-control" placeholder="Ex: admin" />
+                            </div>
+
+                        </div>
+                        <div class=" card-footer">
+                            <input type="submit" value="Cadastrar" class="btn btn-success negrito" />
+                        </div>
                     </div>
-                    <div class="form-group ">
-                        <label>
-                            Unidade Medida
-                            <input asp-for="Login" class="form-control mt-3 " placeholder="Admin" />
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            Marca
-                            <input asp-for="Senha" class="form-control mt-3" placeholder="Admin " />
-                        </label>
-                 
-                 </div>
-                  <div class=" card-footer">
-                        <input type="submit" value="Cadastrar" class="btn btn-success negrito" />
-                    </div>
-                </div>
-        </form>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
