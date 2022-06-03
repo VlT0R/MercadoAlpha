@@ -9,20 +9,16 @@
     }
 </style>
 
+<img src="~/logoalfa.png" width="180" />
+
 @if (TempData["erro"] != null)
 {
     <div class="alert alert-danger">
         @TempData["erro"]
     </div>
 }
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+
+
 
 <div class="card text-white bg-danger m-12 offset-4 col-6 card text-center" style="max-width: 18rem;">
     <div class="card-header">Bem-Vindo</div>
@@ -43,3 +39,18 @@
     </div>
 </div>
 
+<footer>
+    <br />
+        <br />
+
+    <a href="https://pt-br.facebook.com/">
+        <img src="~/facebook.png" width="40" />
+    </a>
+    <a href="https://www.instagram.com/">
+        <img src="~/instagram.png" width="40" />
+    </a>
+    <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoicHQifQ%3D%3D%22%7D">
+        <img src="~/twitter.png" width="40" />
+    </a>
+
+</footer>
